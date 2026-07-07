@@ -5,6 +5,13 @@ import Link from 'next/link'
 export default function Home() {
   const siteUrl = 'https://privatelessonsmalta.com'
   const profileImageUrl = `${siteUrl}/me_graduation.jpg`
+  const servicePages = [
+    { href: '/private-lessons-malta', label: 'Private Lessons Malta' },
+    { href: '/maths-tutor-malta', label: 'Maths Tutor Malta' },
+    { href: '/italian-lessons-malta', label: 'Italian Lessons Malta' },
+    { href: '/chemistry-tutor-malta', label: 'Chemistry Tutor Malta' },
+    { href: '/physics-tutor-malta', label: 'Physics Tutor Malta' }
+  ]
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -136,7 +143,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased font-sans scroll-smooth">
       <Head>
-        <title>Maths & Italian Private Lessons Malta | Science Support | Leonardo Mori</title>
+        <title>Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Private lessons in Malta for Mathematics & Italian (Birkirkara, Sliema, St. Julian's, Msida). Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta name="keywords" content="Maths tutor Malta, Mathematics lessons Malta, Italian tutor Malta, Italian lessons Malta, private lessons Malta, O-Level tutor Malta, A-Level Mathematics Malta, MATSEC preparation, Leonardo Mori" />
@@ -148,14 +155,14 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${siteUrl}/`} />
-        <meta property="og:title" content="Maths & Italian Private Lessons Malta | Science Support | Leonardo Mori" />
+        <meta property="og:title" content="Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori" />
         <meta property="og:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta property="og:image" content={profileImageUrl} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`${siteUrl}/`} />
-        <meta name="twitter:title" content="Maths & Italian Private Lessons Malta | Science Support | Leonardo Mori" />
+        <meta name="twitter:title" content="Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori" />
         <meta name="twitter:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta name="twitter:image" content={profileImageUrl} />
 
@@ -283,7 +290,7 @@ export default function Home() {
             </span>
             
             <h1 className="max-w-2xl font-display text-[38px] sm:text-[48px] lg:text-[60px] xl:text-[66px] text-slate-950 font-extrabold leading-[1.02] mb-5 lg:mb-7 text-center md:text-left">
-              <span className="block text-[0.68em] font-semibold text-slate-600 mb-1 lg:mb-2">Private Tutoring in</span>
+              <span className="block text-[0.68em] font-semibold text-slate-600 mb-1 lg:mb-2">Private Lessons Malta</span>
               <span className="block text-[#1B4332]">Maths & Italian</span>
               <span className="block text-slate-500 text-[0.7em] font-medium mt-2">Chemistry & Physics Support</span>
             </h1>
@@ -560,6 +567,21 @@ export default function Home() {
               <div className="text-xs font-semibold text-teal-600 group-hover:text-teal-300 tracking-wider uppercase mt-4 font-display">
                 Secondary • O-Level • A-Level
               </div>
+            </div>
+          </div>
+
+          <div className="mt-10 sm:mt-12 border-t border-slate-100 pt-8">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 text-center mb-5 font-display">Focused tutoring pages</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {servicePages.map((page) => (
+                <Link
+                  key={page.href}
+                  href={page.href}
+                  className="rounded-[5px] border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors"
+                >
+                  {page.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -892,7 +914,10 @@ export default function Home() {
             <span className="font-bold text-white block font-display">Leonardo Mori</span>
             <span className="text-xs text-slate-500">© {new Date().getFullYear()} Private Science & Italian Tutor. Malta.</span>
           </div>
-          <div className="flex gap-6 text-xs font-display">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs font-display">
+            {servicePages.slice(0, 3).map((page) => (
+              <Link key={page.href} href={page.href} className="hover:text-white transition-colors font-medium">{page.label}</Link>
+            ))}
             <Link href="/cv" className="hover:text-white transition-colors font-medium">Academic CV</Link>
             <a href="mailto:leonardomori23@gmail.com" className="hover:text-white transition-colors font-medium">Email</a>
             <a href={whatsappUrl} className="hover:text-white transition-colors font-medium">WhatsApp</a>
