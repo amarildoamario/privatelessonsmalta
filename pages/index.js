@@ -232,10 +232,10 @@ export default function Home() {
             className="md:hidden p-2 rounded-[5px] hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#1B4332] transition-colors z-50"
             aria-label="Toggle navigation menu"
           >
-            <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span className={`h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 origin-left ${menuOpen ? 'rotate-45 translate-x-1 -translate-y-0.5' : ''}`}></span>
-              <span className={`h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 origin-left ${menuOpen ? '-rotate-45 translate-x-1 translate-y-0.5' : ''}`}></span>
+            <div className="w-6 h-5 relative flex items-center justify-center">
+              <span className={`absolute h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45' : '-translate-y-2'}`}></span>
+              <span className={`absolute h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`absolute h-0.5 w-full bg-slate-800 rounded-full transition-all duration-300 ${menuOpen ? '-rotate-45' : 'translate-y-2'}`}></span>
             </div>
           </button>
         </div>
@@ -251,14 +251,26 @@ export default function Home() {
             <span className="font-bold text-slate-800 text-lg font-display">Navigation</span>
           </div>
           <nav className="flex flex-col gap-6 text-lg font-medium text-slate-700">
-            <Link href="#home" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors">Home</Link>
-            <Link href="#subjects" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors">Subjects</Link>
-            <Link href="#about" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors">About & CV</Link>
-            <Link href="#pricing" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors">Pricing</Link>
-            <Link href="#contact" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors">Contact</Link>
+            <Link href="#home" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
+              <span>🏠</span> <span>Home</span>
+            </Link>
+            <Link href="#subjects" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
+              <span>📚</span> <span>Subjects</span>
+            </Link>
+            <Link href="#about" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
+              <span>👨‍🏫</span> <span>About & CV</span>
+            </Link>
+            <Link href="#pricing" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
+              <span>💰</span> <span>Pricing</span>
+            </Link>
+            <Link href="#contact" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
+              <span>📞</span> <span>Contact</span>
+            </Link>
             <hr className="my-2 border-slate-100" />
             <Link href="/cv" onClick={closeMenu} className="text-[#1B4332] hover:underline py-1 transition-colors flex items-center justify-between">
-              <span>View Academic CV</span>
+              <span className="flex items-center gap-2.5">
+                <span>📄</span> <span>View Academic CV</span>
+              </span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
             </Link>
           </nav>
