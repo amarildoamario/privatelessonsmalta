@@ -74,6 +74,7 @@ export default function Home() {
         <meta name="description" content="Resume of Leonardo Mori, chemical sciences graduate and researcher." />
         <link rel="canonical" href="https://privatelessonsmalta.com/cv" />
         <meta name="robots" content="index,follow" />
+        <link rel="icon" href="/me_graduation.jpg" />
         <style dangerouslySetInnerHTML={{ __html: `
           body { background: #dce1dd !important; }
         ` }} />

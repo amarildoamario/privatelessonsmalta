@@ -159,7 +159,7 @@ export default function Home() {
         <meta name="twitter:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta name="twitter:image" content={profileImageUrl} />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/me_graduation.jpg" />
         {/* Import premium font families */}
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
@@ -364,9 +364,9 @@ export default function Home() {
 
       {/* Features Block */}
       <section className="py-12 bg-white border-y border-slate-100 relative">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {/* Feature 1 */}
-          <div className="flex items-start gap-4">
+          <div className="bg-slate-50 border border-slate-100 rounded-[5px] p-4 flex flex-col items-center text-center sm:items-start sm:text-left gap-3 hover:shadow-md hover:border-slate-200 transition-all duration-300">
             <div className="w-10 h-10 rounded-full bg-[#eef5f1] text-[#1B4332] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -376,7 +376,7 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <h4 className="font-display font-bold text-slate-800 text-base mb-1">Personalised Approach</h4>
+              <h4 className="font-display font-bold text-slate-800 text-sm sm:text-base mb-1">Personalised Approach</h4>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                 Every lesson is tailored to your goals, level and learning style.
               </p>
@@ -384,14 +384,14 @@ export default function Home() {
           </div>
 
           {/* Feature 2 */}
-          <div className="flex items-start gap-4">
+          <div className="bg-slate-50 border border-slate-100 rounded-[5px] p-4 flex flex-col items-center text-center sm:items-start sm:text-left gap-3 hover:shadow-md hover:border-slate-200 transition-all duration-300">
             <div className="w-10 h-10 rounded-full bg-[#eef5f1] text-[#1B4332] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
             </div>
             <div>
-              <h4 className="font-display font-bold text-slate-800 text-base mb-1">Exam Preparation</h4>
+              <h4 className="font-display font-bold text-slate-800 text-sm sm:text-base mb-1">Exam Preparation</h4>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                 Past papers, targeted revision and exam techniques.
               </p>
@@ -399,14 +399,14 @@ export default function Home() {
           </div>
 
           {/* Feature 3 */}
-          <div className="flex items-start gap-4">
+          <div className="bg-slate-50 border border-slate-100 rounded-[5px] p-4 flex flex-col items-center text-center sm:items-start sm:text-left gap-3 hover:shadow-md hover:border-slate-200 transition-all duration-300">
             <div className="w-10 h-10 rounded-full bg-[#eef5f1] text-[#1B4332] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
               </svg>
             </div>
             <div>
-              <h4 className="font-display font-bold text-slate-800 text-base mb-1">Proven Results</h4>
+              <h4 className="font-display font-bold text-slate-800 text-sm sm:text-base mb-1">Proven Results</h4>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                 Improved understanding, confidence and grades.
               </p>
@@ -414,14 +414,14 @@ export default function Home() {
           </div>
 
           {/* Feature 4 */}
-          <div className="flex items-start gap-4">
+          <div className="bg-slate-50 border border-slate-100 rounded-[5px] p-4 flex flex-col items-center text-center sm:items-start sm:text-left gap-3 hover:shadow-md hover:border-slate-200 transition-all duration-300">
             <div className="w-10 h-10 rounded-full bg-[#eef5f1] text-[#1B4332] flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <div>
-              <h4 className="font-display font-bold text-slate-800 text-base mb-1">Flexible & Convenient</h4>
+              <h4 className="font-display font-bold text-slate-800 text-sm sm:text-base mb-1">Flexible & Convenient</h4>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                 Choose between in-person lessons in Malta or online.
               </p>
