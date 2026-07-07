@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Home() {
+  const siteUrl = 'https://privatelessonsmalta.com'
+  const profileImageUrl = `${siteUrl}/me_graduation.jpg`
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -30,7 +32,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Tutor",
     "name": "Leonardo Mori",
-    "image": "https://leonardomori23.github.io/me_graduation.jpg",
+    "url": siteUrl,
+    "image": profileImageUrl,
     "description": "Expert in-person one-to-one private tutor in Malta offering Mathematics, Geometry, and Italian lessons, as well as Chemistry and Physics support for MATSEC SEC, O-Level, A-Level, and University preparation.",
     "telephone": "+39 331 526 3830",
     "email": "leonardomori23@gmail.com",
@@ -139,21 +142,22 @@ export default function Home() {
         <meta name="keywords" content="Maths tutor Malta, Mathematics lessons Malta, Italian tutor Malta, Italian lessons Malta, private lessons Malta, O-Level tutor Malta, A-Level Mathematics Malta, MATSEC preparation, Leonardo Mori" />
         
         {/* Canonical link */}
-        <link rel="canonical" href="https://leonardomori23.github.io/" />
+        <link rel="canonical" href={`${siteUrl}/`} />
+        <meta name="robots" content="index,follow" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://leonardomori23.github.io/" />
+        <meta property="og:url" content={`${siteUrl}/`} />
         <meta property="og:title" content="Maths & Italian Private Lessons Malta | Science Support | Leonardo Mori" />
         <meta property="og:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
-        <meta property="og:image" content="https://leonardomori23.github.io/me_graduation.jpg" />
+        <meta property="og:image" content={profileImageUrl} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://leonardomori23.github.io/" />
+        <meta name="twitter:url" content={`${siteUrl}/`} />
         <meta name="twitter:title" content="Maths & Italian Private Lessons Malta | Science Support | Leonardo Mori" />
         <meta name="twitter:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
-        <meta name="twitter:image" content="https://leonardomori23.github.io/me_graduation.jpg" />
+        <meta name="twitter:image" content={profileImageUrl} />
 
         <link rel="icon" href="/favicon.ico" />
         {/* Import premium font families */}
