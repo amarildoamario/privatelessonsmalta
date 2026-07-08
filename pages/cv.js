@@ -74,7 +74,27 @@ export default function Home() {
         <meta name="description" content="Resume of Leonardo Mori, chemical sciences graduate and researcher." />
         <link rel="canonical" href="https://privatelessonsmalta.com/cv" />
         <meta name="robots" content="index,follow" />
-        <link rel="icon" href="/me_graduation.jpg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://privatelessonsmalta.com/cv" />
+        <meta property="og:title" content="Leonardo Mori — Academic Resume" />
+        <meta property="og:description" content="Resume of Leonardo Mori, chemical sciences graduate, researcher, and private tutor." />
+        <meta property="og:image" content="https://privatelessonsmalta.com/me_graduation.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://privatelessonsmalta.com/cv" />
+        <meta name="twitter:title" content="Leonardo Mori — Academic Resume" />
+        <meta name="twitter:description" content="Resume of Leonardo Mori, chemical sciences graduate, researcher, and private tutor." />
+        <meta name="twitter:image" content="https://privatelessonsmalta.com/me_graduation.jpg" />
+
         <style dangerouslySetInnerHTML={{ __html: `
           body { background: #dce1dd !important; }
         ` }} />

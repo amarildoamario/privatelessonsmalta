@@ -158,6 +158,9 @@ export default function Home() {
         <meta property="og:title" content="Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori" />
         <meta property="og:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta property="og:image" content={profileImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -166,7 +169,9 @@ export default function Home() {
         <meta name="twitter:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
         <meta name="twitter:image" content={profileImageUrl} />
 
-        <link rel="icon" href="/me_graduation.jpg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
         {/* Import premium font families */}
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `

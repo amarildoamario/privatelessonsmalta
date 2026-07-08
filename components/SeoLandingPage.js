@@ -68,6 +68,9 @@ export default function SeoLandingPage({ page }) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={page.description} />
         <meta property="og:image" content={`${siteUrl}/me_graduation.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -76,7 +79,9 @@ export default function SeoLandingPage({ page }) {
         <meta name="twitter:description" content={page.description} />
         <meta name="twitter:image" content={`${siteUrl}/me_graduation.jpg`} />
 
-        <link rel="icon" href="/me_graduation.jpg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
         {/* Import premium font families */}
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
