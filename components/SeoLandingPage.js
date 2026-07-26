@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 const siteUrl = 'https://privatelessonsmalta.com'
 const whatsappNumber = "393315263830"
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Leonardo,%20I'm%20interested%20in%20private%20tutoring%20in%20Malta.%20I'd%20like%20to%20arrange%20a%20free%2020-minute%20consultation.`
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Leonardo,%20I'm%20interested%20in%20private%20tutoring%20in%20Malta%20or%20Gozo.%20I'd%20like%20to%20arrange%20a%20free%2020-minute%20consultation.`
 
 const servicePages = [
-  { href: '/private-lessons-malta', label: 'Private Lessons Malta' },
-  { href: '/maths-tutor-malta', label: 'Maths Tutor Malta' },
-  { href: '/italian-lessons-malta', label: 'Italian Lessons Malta' },
-  { href: '/chemistry-tutor-malta', label: 'Chemistry Tutor Malta' },
-  { href: '/physics-tutor-malta', label: 'Physics Tutor Malta' }
+  { href: '/private-lessons-malta', label: 'Private Lessons Malta & Gozo' },
+  { href: '/maths-tutor-malta', label: 'Maths Tutor Malta & Gozo' },
+  { href: '/italian-lessons-malta', label: 'Italian Lessons Malta & Gozo' },
+  { href: '/chemistry-tutor-malta', label: 'Chemistry Tutor Malta & Gozo' },
+  { href: '/physics-tutor-malta', label: 'Physics Tutor Malta & Gozo' }
 ]
 
 export default function SeoLandingPage({ page }) {
@@ -46,6 +46,7 @@ export default function SeoLandingPage({ page }) {
       '@type': 'Person',
       name: 'Leonardo Mori',
       url: siteUrl,
+      image: `${siteUrl}/leonardo-logo.png`,
       telephone: '+39 331 526 3830',
       email: 'leonardomori23@gmail.com'
     },
@@ -79,11 +80,6 @@ export default function SeoLandingPage({ page }) {
         <meta name="twitter:description" content={page.description} />
         <meta name="twitter:image" content={`${siteUrl}/me_graduation.jpg`} />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
-        {/* Import premium font families */}
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           body { background: #f8fafc !important; }
           html { scroll-behavior: smooth; }
@@ -103,8 +99,8 @@ export default function SeoLandingPage({ page }) {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-[#1B4332]/20 shadow-sm flex-shrink-0">
               <img 
-                src="/me_graduation.jpg" 
-                alt="Leonardo Mori - Professional Science and Italian Private Tutor in Malta" 
+                src="/leonardo-logo.png" 
+                alt="Leonardo Mori - Professional Science and Italian Private Tutor in Malta and Gozo" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -185,7 +181,7 @@ export default function SeoLandingPage({ page }) {
             </Link>
           </nav>
           <div className="mt-auto pt-6 border-t border-slate-100">
-            <p className="text-xs text-slate-400 text-center font-medium">In-person tutoring exclusively in Malta</p>
+            <p className="text-xs text-slate-400 text-center font-medium">In-person tutoring across Malta &amp; Gozo</p>
           </div>
         </div>
       </div>
@@ -324,12 +320,12 @@ export default function SeoLandingPage({ page }) {
                 <div className="w-14 h-14 rounded-full overflow-hidden border border-[#1B4332]/20 shadow-sm mb-3">
                   <img 
                     src="/me_graduation.jpg" 
-                    alt="Leonardo Mori - Private Tutor Malta" 
+                    alt="Leonardo Mori - Private Tutor Malta and Gozo" 
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <span className="font-display text-base text-slate-900 font-bold block">Leonardo Mori</span>
-                <p className="text-xs text-slate-400 font-medium font-display">In-Person Tutoring • Malta</p>
+                <p className="text-xs text-slate-400 font-medium font-display">In-Person Tutoring • Malta &amp; Gozo</p>
               </div>
 
               <div className="flex flex-col gap-3">
@@ -365,7 +361,7 @@ export default function SeoLandingPage({ page }) {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-center sm:text-left">
             <span className="font-bold text-white block font-display">Leonardo Mori</span>
-            <span className="text-xs text-slate-500">© {new Date().getFullYear()} Private Science & Italian Tutor. Malta.</span>
+            <span className="text-xs text-slate-500">© {new Date().getFullYear()} Private Science & Italian Tutor. Malta &amp; Gozo.</span>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs font-display">
             {servicePages.slice(0, 3).map((sp) => (

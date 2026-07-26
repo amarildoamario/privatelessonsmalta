@@ -6,11 +6,11 @@ export default function Home() {
   const siteUrl = 'https://privatelessonsmalta.com'
   const profileImageUrl = `${siteUrl}/me_graduation.jpg`
   const servicePages = [
-    { href: '/private-lessons-malta', label: 'Private Lessons Malta' },
-    { href: '/maths-tutor-malta', label: 'Maths Tutor Malta' },
-    { href: '/italian-lessons-malta', label: 'Italian Lessons Malta' },
-    { href: '/chemistry-tutor-malta', label: 'Chemistry Tutor Malta' },
-    { href: '/physics-tutor-malta', label: 'Physics Tutor Malta' }
+    { href: '/private-lessons-malta', label: 'Private Lessons Malta & Gozo' },
+    { href: '/maths-tutor-malta', label: 'Maths Tutor Malta & Gozo' },
+    { href: '/italian-lessons-malta', label: 'Italian Lessons Malta & Gozo' },
+    { href: '/chemistry-tutor-malta', label: 'Chemistry Tutor Malta & Gozo' },
+    { href: '/physics-tutor-malta', label: 'Physics Tutor Malta & Gozo' }
   ]
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -32,7 +32,7 @@ export default function Home() {
   const closeMenu = () => setMenuOpen(false)
 
   const whatsappNumber = "393315263830"
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Leonardo,%20I'm%20interested%20in%20in-person%20private%20tutoring%20for%20scientific%20subjects%20or%20Italian%20in%20Malta.%20I'd%20like%20to%20arrange%20a%20free%2020-minute%20consultation.`
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Leonardo,%20I'm%20interested%20in%20in-person%20private%20tutoring%20for%20scientific%20subjects%20or%20Italian%20in%20Malta%20or%20Gozo.%20I'd%20like%20to%20arrange%20a%20free%2020-minute%20consultation.`
 
   // JSON-LD structured schema for local SEO optimization in Malta
   const structuredData = {
@@ -41,7 +41,8 @@ export default function Home() {
     "name": "Leonardo Mori",
     "url": siteUrl,
     "image": profileImageUrl,
-    "description": "Expert in-person one-to-one private tutor in Malta offering Mathematics, Geometry, and Italian lessons, as well as Chemistry and Physics support for MATSEC SEC, O-Level, A-Level, and University preparation.",
+    "logo": `${siteUrl}/leonardo-logo.png`,
+    "description": "Expert in-person one-to-one private tutor in Malta & Gozo offering Mathematics, Geometry, and Italian lessons, as well as Chemistry and Physics support for MATSEC SEC, O-Level, A-Level, and University preparation.",
     "telephone": "+39 331 526 3830",
     "email": "leonardomori23@gmail.com",
     "address": {
@@ -63,7 +64,14 @@ export default function Home() {
       { "@type": "AdministrativeArea", "name": "Gzira" },
       { "@type": "AdministrativeArea", "name": "San Gwann" },
       { "@type": "AdministrativeArea", "name": "Swieqi" },
-      { "@type": "AdministrativeArea", "name": "St. Paul's Bay" }
+      { "@type": "AdministrativeArea", "name": "St. Paul's Bay" },
+      { "@type": "AdministrativeArea", "name": "Victoria (Rabat), Gozo" },
+      { "@type": "AdministrativeArea", "name": "Nadur" },
+      { "@type": "AdministrativeArea", "name": "Xaghra" },
+      { "@type": "AdministrativeArea", "name": "Xewkija" },
+      { "@type": "AdministrativeArea", "name": "Ghajnsielem" },
+      { "@type": "AdministrativeArea", "name": "Qala" },
+      { "@type": "AdministrativeArea", "name": "Marsalforn" }
     ],
     "knowsAbout": [
       "Mathematics",
@@ -99,7 +107,7 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Which tutoring subjects do you offer in Malta?",
+        "name": "Which tutoring subjects do you offer in Malta & Gozo?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "I offer specialized one-to-one tutoring in Chemistry (Secondary, O-Level, A-Level, and University modules), Physics (Secondary, O-Level, and A-Level), Mathematics (Secondary, O-Level, and A-Level), Geometry, and Italian (Secondary, O-Level, A-Level, and Conversational)."
@@ -110,7 +118,7 @@ export default function Home() {
         "name": "Where do the tutoring lessons take place?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Lessons can take place in-person at the student's home across Malta (covering Birkirkara, Sliema, St. Julian's, Msida, Valletta, and neighboring areas), at public libraries, or online depending on your preference."
+          "text": "Lessons can take place in-person across Malta & Gozo, including Birkirkara, Sliema, St. Julian's, Msida, Valletta, Victoria, Nadur, Xaghra, Xewkija, Ghajnsielem, Qala and nearby areas, at public libraries, or online depending on your preference."
         }
       },
       {
@@ -143,10 +151,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased font-sans scroll-smooth">
       <Head>
-        <title>Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori</title>
+        <title>Private Lessons Malta & Gozo | Maths, Italian & Science Tutor | Leonardo Mori</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Private lessons in Malta for Mathematics & Italian (Birkirkara, Sliema, St. Julian's, Msida). Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
-        <meta name="keywords" content="Maths tutor Malta, Mathematics lessons Malta, Italian tutor Malta, Italian lessons Malta, private lessons Malta, O-Level tutor Malta, A-Level Mathematics Malta, MATSEC preparation, Leonardo Mori" />
+        <meta name="description" content="Private lessons in Malta & Gozo for Mathematics and Italian, including Victoria, Nadur, Xaghra and nearby areas. Chemistry and Physics support also available." />
+        <meta name="keywords" content="Maths tutor Malta, Maths tutor Gozo, private lessons Malta, private lessons Gozo, Italian lessons Malta and Gozo, tutor Victoria Gozo, tutor Nadur, O-Level tutor Malta, A-Level Mathematics Malta, MATSEC preparation, Leonardo Mori" />
         
         {/* Canonical link */}
         <link rel="canonical" href={`${siteUrl}/`} />
@@ -155,8 +163,8 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${siteUrl}/`} />
-        <meta property="og:title" content="Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori" />
-        <meta property="og:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
+        <meta property="og:title" content="Private Lessons Malta & Gozo | Maths, Italian & Science Tutor | Leonardo Mori" />
+        <meta property="og:description" content="Private lessons in Malta & Gozo for Mathematics and Italian. Expert one-to-one tutoring with Chemistry and Physics support." />
         <meta property="og:image" content={profileImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="1200" />
@@ -165,15 +173,10 @@ export default function Home() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`${siteUrl}/`} />
-        <meta name="twitter:title" content="Private Lessons Malta | Maths, Italian & Science Tutor | Leonardo Mori" />
-        <meta name="twitter:description" content="Private lessons in Malta for Mathematics & Italian. Expert in-person one-to-one tutoring. Chemistry & Physics support also available." />
+        <meta name="twitter:title" content="Private Lessons Malta & Gozo | Maths, Italian & Science Tutor | Leonardo Mori" />
+        <meta name="twitter:description" content="Private lessons in Malta & Gozo for Mathematics and Italian. Expert one-to-one tutoring with Chemistry and Physics support." />
         <meta name="twitter:image" content={profileImageUrl} />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
-        {/* Import premium font families */}
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           body { background: #f8fafc !important; }
           html { scroll-behavior: smooth; }
@@ -198,8 +201,8 @@ export default function Home() {
           <Link href="#home" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-[#1B4332]/20 shadow-sm flex-shrink-0">
               <img 
-                src="/me_graduation.jpg" 
-                alt="Leonardo Mori - Professional Science and Italian Private Tutor in Malta" 
+                src="/leonardo-logo.png" 
+                alt="Leonardo Mori - Professional Science and Italian Private Tutor in Malta and Gozo" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -280,7 +283,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="mt-auto pt-6 border-t border-slate-100">
-            <p className="text-xs text-slate-400 text-center font-medium">In-person tutoring exclusively in Malta</p>
+            <p className="text-xs text-slate-400 text-center font-medium">In-person tutoring across Malta &amp; Gozo</p>
           </div>
         </div>
       </div>
@@ -297,7 +300,7 @@ export default function Home() {
                 <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zm5.99 7.176A9.06 9.06 0 017 16.24v-3.774l1.394.598a3 3 0 002.212 0l1.394-.598v3.774a9.06 9.06 0 01-2.69 3.332zm6.2-.284a1 1 0 01-.89.89 8.976 8.976 0 01-1.05.174v-4.102l1.69-.723a11.112 11.112 0 01.25 3.761z" />
               </svg>
               <span className="inline-flex items-center gap-1">
-                Private Tutor in Malta
+                Private Tutor in Malta &amp; Gozo
                 <svg className="w-3.5 h-2.5 rounded-[1px] shadow-sm flex-shrink-0" viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg">
                   <rect width="4.5" height="6" fill="#FFFFFF" />
                   <rect x="4.5" width="4.5" height="6" fill="#CF142B" />
@@ -307,7 +310,7 @@ export default function Home() {
             </span>
             
             <h1 className="max-w-2xl font-display text-[38px] sm:text-[48px] lg:text-[60px] xl:text-[66px] text-slate-950 font-extrabold leading-[1.02] mb-5 lg:mb-7 text-center md:text-left">
-              <span className="block text-[0.68em] font-semibold text-slate-600 mb-1 lg:mb-2">Private Lessons Malta</span>
+              <span className="block text-[0.68em] font-semibold text-slate-600 mb-1 lg:mb-2">Private Lessons Malta &amp; Gozo</span>
               <span className="block text-[#1B4332]">Maths & Italian</span>
               <span className="block text-slate-500 text-[0.7em] font-medium mt-2">Chemistry & Physics Support</span>
             </h1>
@@ -317,7 +320,7 @@ export default function Home() {
             </p>
 
             <p className="text-sm sm:text-[15px] lg:text-base text-slate-600 leading-relaxed mb-5 lg:mb-7 max-w-[340px] sm:max-w-xl lg:max-w-lg font-normal text-center md:text-left">
-              I help secondary school, A-Level and university students across Malta understand complex topics, improve grades and achieve their goals through structured, patient and effective one-to-one tutoring.
+              I help secondary school, A-Level and university students across Malta &amp; Gozo understand complex topics, improve grades and achieve their goals through structured, patient and effective one-to-one tutoring.
             </p>
             
             <ul className="space-y-2.5 lg:space-y-3 mb-7 lg:mb-9 w-full">
@@ -367,7 +370,7 @@ export default function Home() {
               <div className="w-full h-[320px] sm:h-[390px] md:h-[480px] lg:h-[560px] overflow-hidden rounded-[5px] relative">
                 <img 
                   src="/me_graduation.jpg" 
-                  alt="Leonardo Mori - Professional Private Tutor in Malta" 
+                  alt="Leonardo Mori - Professional Private Tutor in Malta and Gozo" 
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -447,7 +450,7 @@ export default function Home() {
             <div>
               <h4 className="font-display font-bold text-slate-800 text-sm sm:text-base mb-1">Flexible & Convenient</h4>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                Choose between in-person lessons in Malta or online.
+                Choose between in-person lessons in Malta &amp; Gozo or online.
               </p>
             </div>
           </div>
@@ -456,7 +459,7 @@ export default function Home() {
 
       {/* Stats Strip */}
       <section className="bg-[#1B4332] text-white py-6">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-y-6 md:gap-y-0 text-center divide-y divide-white/10 md:divide-y-0 md:divide-x divide-white/10">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-y-6 sm:gap-y-0 text-center divide-y divide-white/10 sm:divide-y-0 sm:divide-x divide-white/10">
           {/* Stat 1 */}
           <div className="flex flex-col items-center justify-center p-2">
             <div className="text-emerald-400 mb-2">
@@ -483,22 +486,11 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center p-2 pt-4 md:pt-2">
             <div className="text-emerald-400 mb-2">
               <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-              </svg>
-            </div>
-            <span className="text-2xl font-bold font-display text-white">5.0</span>
-            <span className="text-xs text-slate-300 font-medium mt-0.5">Average Rating</span>
-          </div>
-
-          {/* Stat 4 */}
-          <div className="flex flex-col items-center justify-center p-2 pt-4 md:pt-2">
-            <div className="text-emerald-400 mb-2">
-              <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <span className="text-2xl font-bold font-display text-white">Malta</span>
+            <span className="text-2xl font-bold font-display text-white">Malta &amp; Gozo</span>
             <span className="text-xs text-slate-300 font-medium mt-0.5">In-Person & Online</span>
           </div>
         </div>
@@ -850,12 +842,12 @@ export default function Home() {
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#1B4332]/20 shadow-sm mb-3">
                 <img 
                   src="/me_graduation.jpg" 
-                  alt="Leonardo Mori - Private Tutor Malta" 
+                  alt="Leonardo Mori - Private Tutor Malta and Gozo" 
                   className="w-full h-full object-cover object-center"
                 />
               </div>
               <span className="font-display text-lg text-slate-900 font-bold block">Leonardo Mori</span>
-              <p className="text-xs text-slate-400 font-medium">In-Person Tutoring • Malta</p>
+              <p className="text-xs text-slate-400 font-medium">In-Person Tutoring • Malta &amp; Gozo</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 items-center justify-center mb-6 sm:mb-8">
@@ -916,7 +908,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1 flex justify-between items-center">
                   <span className="font-semibold text-slate-400 text-xs uppercase tracking-wider font-display">Tutoring Scope</span>
-                  <span className="text-slate-800 text-sm font-semibold">In-Person lessons in Malta</span>
+                  <span className="text-slate-800 text-sm font-semibold">In-Person lessons in Malta &amp; Gozo</span>
                 </div>
               </div>
             </div>
@@ -929,7 +921,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-center sm:text-left">
             <span className="font-bold text-white block font-display">Leonardo Mori</span>
-            <span className="text-xs text-slate-500">© {new Date().getFullYear()} Private Science & Italian Tutor. Malta.</span>
+            <span className="text-xs text-slate-500">© {new Date().getFullYear()} Private Science & Italian Tutor. Malta &amp; Gozo.</span>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs font-display">
             {servicePages.slice(0, 3).map((page) => (

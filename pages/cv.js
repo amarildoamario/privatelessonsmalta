@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 
 const experiences = [
@@ -62,6 +63,30 @@ const experiences = [
 ]
 
 export default function Home() {
+  useEffect(() => {
+    const elements = document.querySelectorAll('.mobile-reveal')
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('is-visible'))
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -36px' }
+    )
+
+    elements.forEach((element) => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
+
   const handlePrint = () => {
     if (typeof window !== 'undefined') window.print()
   }
@@ -74,9 +99,6 @@ export default function Home() {
         <meta name="description" content="Resume of Leonardo Mori, chemical sciences graduate and researcher." />
         <link rel="canonical" href="https://privatelessonsmalta.com/cv" />
         <meta name="robots" content="index,follow" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/me.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/me.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/me.png" />
 
         {/* Open Graph */}
         <meta property="og:type" content="profile" />
@@ -103,8 +125,8 @@ export default function Home() {
       <main className="page-shell">
         <div className="print-toolbar no-print">
           <span>Preview A4</span>
-          <button onClick={handlePrint}>Print / Save PDF</button>
-          <a href="/Leonardo-Mori-Resume.pdf" download="Leonardo-Mori-Resume.pdf" className="download-btn">Scarica PDF (Compresso)</a>
+          <button onClick={handlePrint}>Stampa / Salva PDF</button>
+          <a href="/Leonardo-Mori-Resume.pdf" download="Leonardo-Mori-Resume.pdf" className="download-btn">Scarica PDF</a>
         </div>
 
         <article className="resume">
@@ -125,14 +147,14 @@ export default function Home() {
 
           <div className="resume-grid">
             <aside className="sidebar">
-              <section>
+              <section className="profile-section mobile-reveal">
                 <h2>Profile</h2>
                 <div className="section-content">
                   <p className="profile-text">With experience in academic research and industrial applications involving precious metals, I focus on the organic synthesis of new bioactive compounds and the improvement of production processes. I am seeking technical-scientific, academic or research opportunities that promote innovation, progress and chemical sustainability.</p>
                 </div>
               </section>
 
-              <section>
+              <section className="details-section mobile-reveal">
                 <h2>Details</h2>
                 <div className="section-content">
                   <dl className="details-list">
@@ -143,7 +165,7 @@ export default function Home() {
                 </div>
               </section>
 
-              <section>
+              <section className="languages-section mobile-reveal">
                 <h2>Languages</h2>
                 <div className="section-content">
                   <div className="level-row"><span>Italian</span><strong>Native</strong></div>
@@ -151,7 +173,7 @@ export default function Home() {
                 </div>
               </section>
 
-              <section className="skills-section">
+              <section className="skills-section mobile-reveal">
                 <h2>Technical skills</h2>
                 <div className="section-content">
                   <h3>Software</h3>
@@ -170,7 +192,7 @@ export default function Home() {
                 </div>
               </section>
 
-              <section className="education-section">
+              <section className="education-section mobile-reveal">
                 <h2>Education</h2>
                 <div className="section-content education-list">
                   <article className="education-item">
@@ -244,6 +266,19 @@ export default function Home() {
             </div>
           </div>
         </article>
+
+        <footer className="cv-footer no-print">
+          <div>
+            <p className="cv-footer-name">Leonardo Mori</p>
+            <p>Chemical sciences · Research · Education</p>
+          </div>
+          <nav aria-label="CV footer links">
+            <a href="/">Homepage</a>
+            <a href="mailto:leonardomori23@gmail.com">Email</a>
+            <a href="tel:+393315263830">Call</a>
+          </nav>
+          <p className="cv-footer-copy">© {new Date().getFullYear()} Leonardo Mori</p>
+        </footer>
       </main>
     </>
   )
