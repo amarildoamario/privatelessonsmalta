@@ -4,8 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" type="image/png" href="/leonardo-logo.png" />
-        <link rel="apple-touch-icon" href="/leonardo-logo.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/leonardo-logo.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/leonardo-logo.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/leonardo-logo.png" />
+        <link rel="shortcut icon" href="/leonardo-logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/leonardo-logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Home as HomeIcon, BookOpen, GraduationCap, BadgeEuro, PhoneCall, FileText, ChevronRight } from 'lucide-react'
 
 export default function Home() {
   const siteUrl = 'https://privatelessonsmalta.com'
@@ -82,21 +83,17 @@ export default function Home() {
       "Analytical Chemistry",
       "Physics"
     ],
-    "priceRange": "€20",
+    "priceRange": "€25",
     "offers": {
       "@type": "Offer",
-      "price": "20.00",
+      "price": "25.00",
       "priceCurrency": "EUR",
       "unitText": "hour"
     },
     "provider": {
       "@type": "Person",
       "name": "Leonardo Mori",
-      "jobTitle": "Private Tutor",
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "University of Florence"
-      }
+      "jobTitle": "Private Tutor"
     }
   }
 
@@ -126,7 +123,7 @@ export default function Home() {
         "name": "What are your tutoring rates?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "One-to-one private tutoring is €20 per hour. There are no fixed contracts or upfront commitments. You pay per lesson as you go."
+          "text": "One-to-one private tutoring is €25 per hour. There are no fixed contracts or upfront commitments. You pay per lesson as you go."
         }
       },
       {
@@ -196,9 +193,9 @@ export default function Home() {
         />
       </Head>
       {/* Navigation Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled && !menuOpen ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="#home" className="flex items-center gap-2 group">
+          <Link href="#home" className={`flex items-center gap-2 group transition-all duration-300 ${menuOpen ? 'opacity-0 pointer-events-none -translate-x-2 md:opacity-100 md:pointer-events-auto md:translate-x-0' : 'opacity-100 translate-x-0'}`}>
             <div className="w-10 h-10 rounded-full overflow-hidden border border-[#1B4332]/20 shadow-sm flex-shrink-0">
               <img 
                 src="/leonardo-logo.png" 
@@ -250,36 +247,54 @@ export default function Home() {
       </header>
 
       {/* Mobile Drawer Navigation */}
-      <div className={`fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={closeMenu}>
+      <div className={`fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${menuOpen ? 'opacity-100 pointer-events-auto drawer-open' : 'opacity-0 pointer-events-none'}`} onClick={closeMenu}>
         <div 
-          className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-xl flex flex-col p-8 transition-transform duration-300 ease-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl flex flex-col pt-5 px-6 pb-8 transition-transform duration-300 ease-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-8">
+          <div className="flex items-center justify-between h-10 pb-4 border-b border-slate-100 mb-6 pr-10">
             <span className="font-bold text-slate-800 text-lg font-display">Navigation</span>
           </div>
-          <nav className="flex flex-col gap-6 text-lg font-medium text-slate-700">
-            <Link href="#home" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
-              <span>🏠</span> <span>Home</span>
+          <nav className="flex flex-col gap-3 text-base font-medium text-slate-700">
+            <Link href="#home" onClick={closeMenu} className="nav-item-anim group hover:text-[#1B4332] hover:bg-slate-50 p-2 rounded-[5px] transition-all flex items-center gap-3.5">
+              <span className="w-9 h-9 rounded-[5px] bg-[#eef5f1] text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
+                <HomeIcon className="w-4 h-4 lucide-anim-stroke icon-home-anim" strokeWidth={2.2} />
+              </span>
+              <span>Home</span>
             </Link>
-            <Link href="#subjects" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
-              <span>📚</span> <span>Subjects</span>
+            <Link href="#subjects" onClick={closeMenu} className="nav-item-anim group hover:text-[#1B4332] hover:bg-slate-50 p-2 rounded-[5px] transition-all flex items-center gap-3.5">
+              <span className="w-9 h-9 rounded-[5px] bg-[#eef5f1] text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
+                <BookOpen className="w-4 h-4 lucide-anim-stroke icon-book-anim" strokeWidth={2.2} />
+              </span>
+              <span>Subjects</span>
             </Link>
-            <Link href="#about" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
-              <span>👨‍🏫</span> <span>About & CV</span>
+            <Link href="#about" onClick={closeMenu} className="nav-item-anim group hover:text-[#1B4332] hover:bg-slate-50 p-2 rounded-[5px] transition-all flex items-center gap-3.5">
+              <span className="w-9 h-9 rounded-[5px] bg-[#eef5f1] text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
+                <GraduationCap className="w-4 h-4 lucide-anim-stroke icon-grad-anim" strokeWidth={2.2} />
+              </span>
+              <span>About &amp; CV</span>
             </Link>
-            <Link href="#pricing" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
-              <span>💰</span> <span>Pricing</span>
+            <Link href="#pricing" onClick={closeMenu} className="nav-item-anim group hover:text-[#1B4332] hover:bg-slate-50 p-2 rounded-[5px] transition-all flex items-center gap-3.5">
+              <span className="w-9 h-9 rounded-[5px] bg-[#eef5f1] text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
+                <BadgeEuro className="w-4 h-4 lucide-anim-stroke icon-price-anim" strokeWidth={2.2} />
+              </span>
+              <span>Pricing</span>
             </Link>
-            <Link href="#contact" onClick={closeMenu} className="hover:text-[#1B4332] py-1 transition-colors flex items-center gap-2.5">
-              <span>📞</span> <span>Contact</span>
+            <Link href="#contact" onClick={closeMenu} className="nav-item-anim group hover:text-[#1B4332] hover:bg-slate-50 p-2 rounded-[5px] transition-all flex items-center gap-3.5">
+              <span className="w-9 h-9 rounded-[5px] bg-[#eef5f1] text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
+                <PhoneCall className="w-4 h-4 lucide-anim-stroke icon-phone-anim" strokeWidth={2.2} />
+              </span>
+              <span>Contact</span>
             </Link>
             <hr className="my-2 border-slate-100" />
-            <Link href="/cv" onClick={closeMenu} className="text-[#1B4332] hover:underline py-1 transition-colors flex items-center justify-between">
-              <span className="flex items-center gap-2.5">
-                <span>📄</span> <span>View Academic CV</span>
+            <Link href="/cv" onClick={closeMenu} className="nav-item-anim group text-[#1B4332] font-semibold hover:bg-[#eef5f1]/60 p-2 rounded-[5px] transition-all flex items-center justify-between">
+              <span className="flex items-center gap-3.5">
+                <span className="w-9 h-9 rounded-[5px] bg-[#1B4332] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-sm">
+                  <FileText className="w-4 h-4 lucide-anim-stroke icon-file-anim" strokeWidth={2.2} />
+                </span>
+                <span>View Academic CV</span>
               </span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+              <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </nav>
           <div className="mt-auto pt-6 border-t border-slate-100">
@@ -647,7 +662,7 @@ export default function Home() {
       </section>
 
       {/* Academic & Professional Background (CV Summary Section) */}
-      <section id="about" className="py-12 sm:py-20 px-4 bg-white">
+      <section id="about" data-nosnippet className="py-12 sm:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-xs uppercase tracking-widest text-teal-600 font-bold mb-3 font-display block">Professional Credentials</span>
@@ -776,7 +791,7 @@ export default function Home() {
                 <h4 className="text-lg font-bold mb-1 font-display">One-to-One Session</h4>
                 <p className="text-slate-400 text-xs mb-6">In-person, focused learning</p>
                 <div className="flex items-center justify-center gap-1 mb-6">
-                  <span className="text-4xl font-bold text-white font-display">€20</span>
+                  <span className="text-4xl font-bold text-white font-display">€25</span>
                   <span className="text-slate-400 text-sm font-medium">/ hour</span>
                 </div>
                 <ul className="text-left text-slate-300 text-sm space-y-3 mb-8">

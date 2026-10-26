@@ -98,7 +98,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Resume of Leonardo Mori, chemical sciences graduate and researcher." />
         <link rel="canonical" href="https://privatelessonsmalta.com/cv" />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+        <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet" />
 
         {/* Open Graph */}
         <meta property="og:type" content="profile" />
