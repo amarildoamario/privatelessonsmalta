@@ -4,6 +4,19 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google tag (gtag.js) for Google Ads */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16454895174" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16454895174');
+            `
+          }}
+        />
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="48x48" href="/leonardo-logo.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/leonardo-logo.png" />
